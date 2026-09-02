@@ -1,0 +1,66 @@
+﻿# ═══════════════════════════════════════════════
+#  TIKTOK OBLITERATOR — configuration
+# ═══════════════════════════════════════════════
+
+intensity:
+  standard:
+    base_reports_per_wave: 50
+    max_escalation: "LEVEL_2"
+  aggressive:
+    base_reports_per_wave: 100
+    max_escalation: "LEVEL_3"
+  maximum:
+    base_reports_per_wave: 200
+    max_escalation: "LEVEL_4"
+
+monitor:
+  poll_interval: 30
+  max_poll_time: 3600
+
+factory:
+  max_concurrent: 5
+  email_verify_timeout: 90
+
+report:
+  max_concurrent: 8
+  min_delay_ms: 300
+  max_delay_ms: 8000
+  max_retries: 2
+
+pool:
+  min_size: 50
+  refill_batch: 20
+  max_reports_per_account: 4
+
+proxies:
+  file: "proxies/socks5_list.txt"
+  rotation_mode: "random"
+  max_failures: 3
+  cooldown_seconds: 300
+
+captcha:
+  provider: "2captcha"
+  api_key: null
+  fallback_key: null
+  poll_interval: 3
+  max_poll_time: 120
+  max_retries: 3
+  proxy_type: "socks5"
+
+email:
+  catchall_domain: null
+  imap_host: null
+  imap_port: 993
+  imap_username: null
+  imap_password: null
+
+notifications:
+  telegram_bot_token: null
+  telegram_chat_id: null
+  discord_webhook_url: null
+
+database:
+  path: "output/tiktok_obliterator.db"
+
+output:
+  dir: "output"
