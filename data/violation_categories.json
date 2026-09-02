@@ -1,0 +1,113 @@
+{
+  "categories": {
+    "harassment": {
+      "reason_id": 1,
+      "label": "Harassment & Bullying",
+      "weight": 25,
+      "sub_reasons": [
+        { "id": 101, "label": "Bullying" },
+        { "id": 102, "label": "Threats of violence" },
+        { "id": 103, "label": "Targeted harassment" },
+        { "id": 104, "label": "Hate speech" },
+        { "id": 105, "label": "Sexual harassment" }
+      ],
+      "severity": "medium",
+      "auto_ban_threshold": 15
+    },
+    "spam": {
+      "reason_id": 2,
+      "label": "Spam & Fake Engagement",
+      "weight": 25,
+      "sub_reasons": [
+        { "id": 201, "label": "Fake engagement" },
+        { "id": 202, "label": "Misleading content" },
+        { "id": 203, "label": "Scam promotion" },
+        { "id": 204, "label": "Repetitive posting" }
+      ],
+      "severity": "low",
+      "auto_ban_threshold": 25
+    },
+    "impersonation": {
+      "reason_id": 3,
+      "label": "Impersonation",
+      "weight": 20,
+      "sub_reasons": [
+        { "id": 301, "label": "Impersonating a person" },
+        { "id": 302, "label": "Fake account" },
+        { "id": 303, "label": "Identity theft" },
+        { "id": 304, "label": "Celebrity impersonation" }
+      ],
+      "severity": "medium",
+      "auto_ban_threshold": 12
+    },
+    "underage": {
+      "reason_id": 4,
+      "label": "Minor Safety",
+      "weight": 10,
+      "sub_reasons": [
+        { "id": 401, "label": "Under 13 years old" },
+        { "id": 402, "label": "Minor exploitation" },
+        { "id": 403, "label": "Child grooming concern" },
+        { "id": 404, "label": "Unsupervised minor" }
+      ],
+      "severity": "critical",
+      "auto_ban_threshold": 5
+    },
+    "self_harm": {
+      "reason_id": 5,
+      "label": "Self-Harm & Suicide",
+      "weight": 10,
+      "sub_reasons": [
+        { "id": 501, "label": "Suicide content" },
+        { "id": 502, "label": "Self-harm glorification" },
+        { "id": 503, "label": "Eating disorder promotion" },
+        { "id": 504, "label": "Dangerous challenge" }
+      ],
+      "severity": "critical",
+      "auto_ban_threshold": 5
+    },
+    "illegal": {
+      "reason_id": 6,
+      "label": "Illegal Activities",
+      "weight": 5,
+      "sub_reasons": [
+        { "id": 601, "label": "Drug promotion" },
+        { "id": 602, "label": "Weapons trading" },
+        { "id": 603, "label": "Fraud & scams" },
+        { "id": 604, "label": "Counterfeit goods" }
+      ],
+      "severity": "high",
+      "auto_ban_threshold": 8
+    },
+    "terrorism": {
+      "reason_id": 7,
+      "label": "Violent Extremism",
+      "weight": 5,
+      "sub_reasons": [
+        { "id": 701, "label": "Terrorist content" },
+        { "id": 702, "label": "Violent extremism" },
+        { "id": 703, "label": "Mass violence glorification" },
+        { "id": 704, "label": "Radicalization material" }
+      ],
+      "severity": "critical",
+      "auto_ban_threshold": 3
+    }
+  },
+  "escalation_overrides": {
+    "level_3_and_above": {
+      "underage": 30,
+      "self_harm": 25,
+      "illegal": 25,
+      "terrorism": 20,
+      "harassment": 0,
+      "spam": 0,
+      "impersonation": 0
+    },
+    "note": "At high escalation levels, only severe categories are used — these trigger auto-bans faster"
+  },
+  "report_endpoint_retry_order": [
+    "https://www.tiktok.com/aweme/v2/aweme/feedback/",
+    "https://www.tiktok.com/api/commit/item/feedback/",
+    "https://m.tiktok.com/api/commit/item/feedback/"
+  ]
+}
